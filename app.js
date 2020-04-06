@@ -34,6 +34,7 @@ const merge = (left, right) => {
   //Merge right arr
   while (right.length) result.push(right.shift());
   //return result arr
+  console.log(`Result: ${result}`);
   return result;
 };
 

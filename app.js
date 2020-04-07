@@ -41,3 +41,28 @@ const merge = (left, right) => {
 let arr = [4, 7, 8, 1, 10, 5, 3];
 
 console.log(mergeSort(arr));
+
+// Insertion Sort Algorithm
+
+const insertionSort = (arr) => {
+  //Loop through the arr (minus the base value)
+  for (let i = 1; i < arr.length; i++) {
+    //Loop through the entire arr and compare
+    console.log("outer:" + arr[i]);
+    for (let j = 0; j < arr.length; j++) {
+      //Check if value is less than current index
+      console.log("inner:" + arr[j]);
+      if (arr[i] < arr[j]) {
+        //If less, remove from arr and store in temp variable
+        let temp = arr.splice(i, 1);
+        console.log("temp:" + temp);
+        //INSERT value into correct index
+        arr.splice(j, 0, temp[0]);
+      }
+    }
+  }
+  //Return sorted arr
+  return arr;
+};
+
+console.log(insertionSort(arr));

@@ -1,3 +1,4 @@
+// !Merge Sort
 // Function mergeSort
 const mergeSort = (arr) => {
   //Check if arr can be split
@@ -39,11 +40,9 @@ const merge = (left, right) => {
 };
 
 let arr = [4, 7, 8, 1, 10, 5, 3];
-
 console.log(mergeSort(arr));
 
-// Insertion Sort Algorithm
-
+// !Insertion Sort Algorithm
 const insertionSort = (arr) => {
   //Loop through the arr (minus the base value)
   for (let i = 1; i < arr.length; i++) {
@@ -66,14 +65,11 @@ const insertionSort = (arr) => {
 };
 
 // console.log(insertionSort(arr));
-
 let arr2 = [3, 1, 7];
-
 console.log(insertionSort(arr2));
 
-// Bubble Sort
-
-function bubbleSort(arr) {
+// !Bubble Sort
+bubbleSort = (arr) => {
   //loop length
   const loop = arr.length;
   //loop for loop length
@@ -91,13 +87,12 @@ function bubbleSort(arr) {
   }
   console.log(arr);
   return arr;
-}
+};
 
 bubbleSort([45, 101, -10, 55522, 3224, 523, 16, 133, 543, 33, 33, 123]);
 
 // Binary Search
-
-function BinarySearch(array, low, high, target) {
+binarySearch = (array, low, high, target) => {
   //base condition
   // To exit the recursion, if array is empty or n = 1
   if (low > high) {
@@ -111,14 +106,14 @@ function BinarySearch(array, low, high, target) {
   } else if (target < array[mid]) {
     //if the target is less the number at the midpoint of array
     //Search the 2nd half.
-    return BinarySearch(array, low, mid - 1, target);
+    return binarySearch(array, low, mid - 1, target);
   } else {
     //if the target is larger number at the midpoint of array
     //Search the 1st half.
-    return BinarySearch(array, mid + 1, high, target);
+    return binarySearch(array, mid + 1, high, target);
   }
-}
+};
 // To test:
-BinarySearch([1, 5, 7, 8, 9, 10, 15], 0, 6, 5);
+binarySearch([1, 5, 7, 8, 9, 10, 15], 0, 6, 5);
 // Console:
 ("Target is found at index:  1");
